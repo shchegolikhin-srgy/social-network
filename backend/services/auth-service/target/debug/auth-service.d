@@ -1,0 +1,1 @@
+/home/sergey/projects/other/social-media/backend/services/auth-service/target/debug/auth-service: /home/sergey/projects/other/social-media/backend/services/auth-service/src/api/mod.rs /home/sergey/projects/other/social-media/backend/services/auth-service/src/api/routes.rs /home/sergey/projects/other/social-media/backend/services/auth-service/src/main.rs
