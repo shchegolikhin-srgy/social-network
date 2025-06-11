@@ -13,9 +13,8 @@ mod api;
 
 #[tokio::main]
 async fn main() {
-    let addr = SocketAddr::from(([0, 0, 0, 0], 3003));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 4000));
     let app:Router = Router::new()
-        .route("/fetch_recommendations", get(get_recommendations))
         .merge(routes::router());
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
     

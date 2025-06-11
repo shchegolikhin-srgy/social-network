@@ -6,3 +6,14 @@ pub struct User{
     username: String,
     email: String,
 }
+
+#[derive(Deserialize)]
+struct LoginRequest {
+    username: String,
+    password: String,
+}
+
+#[derive(Serialize)]
+struct AuthResponse {
+    token: String,
+}
