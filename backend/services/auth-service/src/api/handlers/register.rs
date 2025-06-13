@@ -22,8 +22,6 @@ pub struct AuthResponse {
     pub token: String,
 }
 
-const JWT_SECRET: &[u8] = b"my-secret-key";
-
 pub async fn register_handler(Json(payload): Json<RegisterRequest>) -> Result<Json<AuthResponse>, StatusCode> {
     Err(StatusCode::UNAUTHORIZED)
 }
