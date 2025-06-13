@@ -4,7 +4,7 @@ use std::sync::Arc;
 
 #[derive(Clone)]
 pub struct AppState {
-    pub pool: Arc<PgPool>,
+    pub pool: PgPool,
 }impl AppState{
     pub async fn new(database_url:&str)->Result<Self, sqlx::Error>{
         let pool = PgPoolOptions::new()
@@ -12,7 +12,7 @@ pub struct AppState {
         .connect(database_url)
         .await?;
         Ok(Self {
-             pool: Arc::new(pool),
+            pool: pool,
          })
     }
 }
