@@ -11,7 +11,7 @@ use auth_service::core::config::Settings;
 use sqlx::Error;
 
 #[tokio::main]
-async fn main() {
+async fn main(){
     let settings = Settings::new().await.unwrap();
 
     let state = AppState::new(&settings.database_url).await.unwrap();
