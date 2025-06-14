@@ -11,8 +11,6 @@ use auth_service::core::config::Settings;
 
 #[tokio::main]
 async fn main() {
-    let database_url:&'static str = "postgres://postgres:password@localhost/project1users";
-
     let settings = Settings::new().await.unwrap();
 
     let state = AppState::new(&settings.database_url).await.unwrap();
@@ -21,14 +19,14 @@ async fn main() {
         .with_state(state.clone())
         .merge(routes::router());
     let listener = tokio::net::TcpListener::bind(&settings.addr).await.unwrap();
-    
     use auth_service::services::register_service;
     register_service::register_user_by_username(State(state.clone()), User{
         hashed_password: String::from("password"),
         username: String::from("pidor@"),
         email: String::from("example@"),
     }   
-    ).await.unwrap();
-    serve(listener, app).await.unwrap();
     
+    ).await.unwrap();
+
+    serve(listener, app).await.unwrap();
 }
