@@ -2,10 +2,9 @@ use axum::{
     Router,
     serve,
 };
-use api::routes;
+use auth_service::api::routes;
 use std::net::SocketAddr;
 use auth_service::AppState;
-mod api;
 
 #[tokio::main]
 async fn main() {

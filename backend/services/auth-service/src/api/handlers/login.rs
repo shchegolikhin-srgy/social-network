@@ -6,20 +6,7 @@ use axum::{
 use std::collections::HashMap;
 use jsonwebtoken::{encode, Header, EncodingKey};
 use serde::{Deserialize, Serialize};
-//use crate::models::login::{LoginRequest, AuthResponse};
-
-///Поместит структуры в models
-
-#[derive(Deserialize)]
-pub struct LoginRequest {
-    pub username: String,
-    pub password: String,
-}
-
-#[derive(Serialize)]
-pub struct AuthResponse {
-    pub token: String,
-}
+use crate::models::login::{AuthResponse, LoginRequest};
 
 const JWT_SECRET: &[u8] = b"my-secret-key";
 

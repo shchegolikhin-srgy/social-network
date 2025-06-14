@@ -1,0 +1,5 @@
+/home/sergey/projects/project-1/backend/services/auth-service/target/debug/deps/libsqlx_macros-082615aa7d8df15a.so: /home/sergey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.7.4/src/lib.rs
+
+/home/sergey/projects/project-1/backend/services/auth-service/target/debug/deps/sqlx_macros-082615aa7d8df15a.d: /home/sergey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.7.4/src/lib.rs
+
+/home/sergey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.7.4/src/lib.rs:
