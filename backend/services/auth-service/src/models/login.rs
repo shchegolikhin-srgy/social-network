@@ -28,3 +28,9 @@ struct Claims {
 struct RefreshRequest {
     refresh_token: String,
 }
+
+#[derive(Deserialize)]
+pub struct RegisterRequest {
+    pub username: String,
+    pub password: String,
+}

@@ -14,5 +14,5 @@ pub struct AppState {
         Ok(Self {
             pool: pool,
          })
-    }
+    } 
 }

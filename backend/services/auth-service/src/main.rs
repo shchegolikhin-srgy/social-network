@@ -1,3 +1,5 @@
+use auth_service::models::user::User;
+use axum::extract::State;
 use axum::{
     Router,
     serve,
@@ -5,21 +7,28 @@ use axum::{
 use auth_service::api::routes;
 use auth_service::AppState;
 use auth_service::services::register_service;
-use auth_service::core::config;
+use auth_service::core::config::Settings;
 
 #[tokio::main]
 async fn main() {
     let database_url:&'static str = "postgres://postgres:password@localhost/project1users";
 
-    let settings = config::Settings::load_config()?;
+    let settings = Settings::new().await.unwrap();
 
-    let state = AppState::new(settings.database_url).await.unwrap();
+    let state = AppState::new(&settings.database_url).await.unwrap();
     
     let app:Router = Router::new()
-        .with_state(state)
+        .with_state(state.clone())
         .merge(routes::router());
-    let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
+    let listener = tokio::net::TcpListener::bind(&settings.addr).await.unwrap();
     
+    use auth_service::services::register_service;
+    register_service::register_user_by_username(State(state.clone()), User{
+        hashed_password: String::from("password"),
+        username: String::from("pidor@"),
+        email: String::from("example@"),
+    }   
+    ).await.unwrap();
     serve(listener, app).await.unwrap();
     
 }
