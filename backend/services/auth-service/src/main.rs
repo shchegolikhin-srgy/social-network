@@ -3,14 +3,18 @@ use axum::{
     serve,
 };
 use auth_service::api::routes;
-use std::net::SocketAddr;
 use auth_service::AppState;
+use auth_service::services::register_service;
+use auth_service::core::config;
 
 #[tokio::main]
 async fn main() {
     let database_url:&'static str = "postgres://postgres:password@localhost/project1users";
-    let state = AppState::new(database_url).await.unwrap();
-    let addr = SocketAddr::from(([0, 0, 0, 0], 4002));
+
+    let settings = config::Settings::load_config()?;
+
+    let state = AppState::new(settings.database_url).await.unwrap();
+    
     let app:Router = Router::new()
         .with_state(state)
         .merge(routes::router());

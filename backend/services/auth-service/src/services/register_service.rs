@@ -1,6 +1,7 @@
 use crate::core::app_state::AppState;
 use axum::extract::State;
 use crate::models::user::User;
+use sqlx;
 
 async fn register_user_by_username(
     State(state): State<AppState>,
@@ -10,7 +11,7 @@ async fn register_user_by_username(
         "INSERT INTO users (username, hashed_password) VALUES('$1', '$2');",
         
     )
-    .fetch_one(&state.pool) 
+    .execute(&state.pool) 
     .await?;
     Ok(())
 }
@@ -22,7 +23,7 @@ async fn register_user_by_email(
         "INSERT INTO users (username, hashed_password, email) VALUES('$1', '$2', '$3');",
         1
     )
-    .fetch_one(&state.pool) 
+    .execute(&state.pool) 
     .await?;
 
     Ok(())
@@ -36,7 +37,7 @@ async fn register_user_with_role(
         "INSERT INTO users (username, hashed_password, role, email) VALUES('$1', '$2', '$3', '$4');",
         1
     )
-    .fetch_one(&state.pool) 
+    .execute(&state.pool) 
     .await?;
 
     Ok(())
