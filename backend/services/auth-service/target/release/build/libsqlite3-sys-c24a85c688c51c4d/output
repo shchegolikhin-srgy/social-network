@@ -6,7 +6,7 @@ cargo:rerun-if-env-changed=SQLITE_MAX_VARIABLE_NUMBER
 cargo:rerun-if-env-changed=SQLITE_MAX_EXPR_DEPTH
 cargo:rerun-if-env-changed=SQLITE_MAX_COLUMN
 cargo:rerun-if-env-changed=LIBSQLITE3_FLAGS
-OUT_DIR = Some(/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out)
+OUT_DIR = Some(/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out)
 OPT_LEVEL = Some(3)
 TARGET = Some(x86_64-unknown-linux-gnu)
 HOST = Some(x86_64-unknown-linux-gnu)
@@ -57,5 +57,5 @@ ARFLAGS_x86_64_unknown_linux_gnu = None
 cargo:rerun-if-env-changed=ARFLAGS_x86_64-unknown-linux-gnu
 ARFLAGS_x86_64-unknown-linux-gnu = None
 cargo:rustc-link-lib=static=sqlite3
-cargo:rustc-link-search=native=/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out
-cargo:lib_dir=/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out
+cargo:rustc-link-search=native=/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out
+cargo:lib_dir=/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/libsqlite3-sys-c24a85c688c51c4d/out

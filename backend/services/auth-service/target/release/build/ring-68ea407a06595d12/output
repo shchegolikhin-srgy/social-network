@@ -12,7 +12,7 @@ cargo:rerun-if-env-changed=CARGO_CFG_TARGET_OS
 cargo:rerun-if-env-changed=CARGO_CFG_TARGET_ENV
 cargo:rerun-if-env-changed=CARGO_CFG_TARGET_ENDIAN
 OPT_LEVEL = Some(0)
-OUT_DIR = Some(/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out)
+OUT_DIR = Some(/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out)
 TARGET = Some(x86_64-unknown-linux-gnu)
 HOST = Some(x86_64-unknown-linux-gnu)
 cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-gnu
@@ -40,7 +40,7 @@ CFLAGS_x86_64-unknown-linux-gnu = None
 CARGO_ENCODED_RUSTFLAGS = Some()
 cargo:rustc-link-lib=static=ring_core_0_17_14_
 OPT_LEVEL = Some(0)
-OUT_DIR = Some(/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out)
+OUT_DIR = Some(/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out)
 TARGET = Some(x86_64-unknown-linux-gnu)
 HOST = Some(x86_64-unknown-linux-gnu)
 cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-gnu
@@ -67,7 +67,7 @@ cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-gnu
 CFLAGS_x86_64-unknown-linux-gnu = None
 CARGO_ENCODED_RUSTFLAGS = Some()
 cargo:rustc-link-lib=static=ring_core_0_17_14__test
-cargo:rustc-link-search=native=/home/sergey/projects/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out
+cargo:rustc-link-search=native=/home/sergey/projects/other/project-1/backend/services/auth-service/target/release/build/ring-68ea407a06595d12/out
 cargo:rerun-if-changed=crypto/limbs/limbs.inl
 cargo:rerun-if-changed=crypto/limbs/limbs.c
 cargo:rerun-if-changed=crypto/limbs/limbs.h
